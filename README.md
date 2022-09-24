@@ -1,3 +1,5 @@
+# Hi there 👋. My name is Ahmet
+
 # 💫 About Me:
 🔭 I’m currently working on Gaming Operation (GO) Company<br>👯 I’m looking to collaborate on Deep & Machine Learning, Databases and Data Science<br>🤝 I’m looking for help with Computer Vision<br>🌱 I’m currently learning JAVA & C# for Backend Development<br>💬 Ask me everything about Data Science<br>
 
