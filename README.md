@@ -3,7 +3,7 @@
 <a href=#><img src="contributions.svg"></a>
 
 # 💫 About Me:
-🔭 I’m currently working on Gaming Operation (GO) Company<br>👯 I’m looking to collaborate on Deep & Machine Learning, Databases and Data Science<br>🤝 I’m looking for help with Computer Vision<br>🌱 I’m currently learning JAVA & C# for Backend Development<br>💬 Ask me everything about Data Science<br>
+🔭 I’m currently studying at Technical University of Munich as a Biomedical Engineering & Medical Physics Master Student<br>👯 I’m looking to collaborate on Deep & Machine Learning, NLP technologies Databases and Data Science<br>🤝 I’m looking for help with Computer Vision, NLP projects (especially RAG applications)<br>🌱 I’m currently learning MATLAB, R and Python for ML, DL and AI projects<br>💬 Ask me everything about Data Science<br>
 
 
 ## 🌐 Socials:
