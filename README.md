@@ -3,7 +3,7 @@
 <a href=#><img src="contributions.svg"></a>
 
 # 💫 About Me:
-🔭 I’m currently studying at Mimar Sinan Fine State University as a Statistics Master Student<br>👯 I’m looking to collaborate on Deep & Machine Learning, NLP technologies Databases and Data Science<br>🤝 I’m looking for help with Computer Vision, NLP projects (especially RAG applications)<br>🌱 I’m currently learning MATLAB, R and Python for ML, DL and AI projects<br>💬 Ask me everything about Data Science<br>
+🔭 I’m currently studying at Yıldız Technical University as a Computer Engineering PhD Student<br>👯 I’m looking to collaborate on Deep & Machine Learning, NLP technologies Databases and Data Science<br>🤝 I’m looking for help with Computer Vision, NLP projects (especially RAG applications)<br>🌱 I’m currently learning MATLAB, R and Python for ML, DL and AI projects<br>💬 Ask me everything about Data Science<br>
 
 
 ## 🌐 Socials:
