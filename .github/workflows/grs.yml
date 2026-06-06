@@ -15,13 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate stats card
+      - name: Generate languages card
         uses: readme-tools/github-readme-stats-action@v1
         with:
-          card: stats
-          options: username=${{ github.repository_owner }}&show_icons=true
-          path: profile/stats.svg
-          # Use the automatic secure token instead of a hardcoded personal one
+          card: languages
+          options: username=${{ github.repository_owner }}&theme=tokyonight&layout=compact&card_width=495&title_color=38bdf8&icon_color=a855f7&text_color=cbd5e1&bg_color=0f172a
+          path: profile/languages.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards
