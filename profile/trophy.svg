@@ -1,5 +1,193 @@
-Payment required
-
-DEPLOYMENT_DISABLED
-
-cle1::xqmcg-1780744629867-f3cb1d542096
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1018" height="254"
+     viewBox="0 0 1018 254"
+     role="img" aria-label="GitHub Trophies for ahmetcangunay">
+  <defs>
+    <linearGradient id="bg_grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1018" height="254" rx="18" ry="18" fill="url(#bg_grad)"/>
+  <rect width="1018" height="254" rx="18" ry="18"
+        fill="none" stroke="#6366f1" stroke-opacity="0.25" stroke-width="1.5"/>
+  <text x="509" y="32" text-anchor="middle" dominant-baseline="middle"
+        font-size="15" font-weight="700" fill="#e2e8f0" letter-spacing="3"
+        font-family="'Segoe UI',system-ui,sans-serif">
+    🏆  Ahmet Can GÜNAY 🤖  ·  GitHub Trophies
+  </text>
+  <text x="509" y="48" text-anchor="middle" dominant-baseline="middle"
+        font-size="9.5" fill="#475569"
+        font-family="'JetBrains Mono','Courier New',monospace">
+    2026-06-06 12:04 UTC
+  </text>
+  
+  <g transform="translate(24,80)">
+    <defs>
+      <linearGradient id="g_stars_bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#94a3b8" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#64748b" stop-opacity="0.08"/>
+      </linearGradient>
+      <linearGradient id="g_stars_badge" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#475569"/>
+        <stop offset="100%" stop-color="#94a3b8"/>
+      </linearGradient>
+    </defs>
+    <rect width="150" height="150" rx="14" ry="14"
+          fill="url(#g_stars_bg)" stroke="#94a3b8" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="75" y="46" text-anchor="middle" dominant-baseline="middle"
+          font-size="26" fill="#94a3b8" opacity="0.9" font-family="serif">★</text>
+    <rect x="55" y="62" width="40" height="28" rx="8"
+          fill="url(#g_stars_badge)" opacity="0.95"/>
+    <text x="75" y="76" text-anchor="middle" dominant-baseline="middle"
+          font-size="15" font-weight="700" fill="#ffffff"
+          font-family="'JetBrains Mono','Courier New',monospace">D</text>
+    <text x="75" y="104" text-anchor="middle" dominant-baseline="middle"
+          font-size="10.5" fill="#94a3b8"
+          font-family="'Segoe UI',system-ui,sans-serif"
+          font-weight="600" letter-spacing="0.5">Stars</text>
+    <text x="75" y="124" text-anchor="middle" dominant-baseline="middle"
+          font-size="11" fill="#94a3b8"
+          font-family="'JetBrains Mono','Courier New',monospace">4</text>
+  </g>
+  <g transform="translate(188,80)">
+    <defs>
+      <linearGradient id="g_commits_bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#22c55e" stop-opacity="0.08"/>
+      </linearGradient>
+      <linearGradient id="g_commits_badge" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#16a34a"/>
+        <stop offset="100%" stop-color="#4ade80"/>
+      </linearGradient>
+    </defs>
+    <rect width="150" height="150" rx="14" ry="14"
+          fill="url(#g_commits_bg)" stroke="#4ade80" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="75" y="46" text-anchor="middle" dominant-baseline="middle"
+          font-size="26" fill="#4ade80" opacity="0.9" font-family="serif">◆</text>
+    <rect x="55" y="62" width="40" height="28" rx="8"
+          fill="url(#g_commits_badge)" opacity="0.95"/>
+    <text x="75" y="76" text-anchor="middle" dominant-baseline="middle"
+          font-size="15" font-weight="700" fill="#ffffff"
+          font-family="'JetBrains Mono','Courier New',monospace">C</text>
+    <text x="75" y="104" text-anchor="middle" dominant-baseline="middle"
+          font-size="10.5" fill="#4ade80"
+          font-family="'Segoe UI',system-ui,sans-serif"
+          font-weight="600" letter-spacing="0.5">Commits</text>
+    <text x="75" y="124" text-anchor="middle" dominant-baseline="middle"
+          font-size="11" fill="#94a3b8"
+          font-family="'JetBrains Mono','Courier New',monospace">186</text>
+  </g>
+  <g transform="translate(352,80)">
+    <defs>
+      <linearGradient id="g_prs_bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#94a3b8" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#64748b" stop-opacity="0.08"/>
+      </linearGradient>
+      <linearGradient id="g_prs_badge" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#475569"/>
+        <stop offset="100%" stop-color="#94a3b8"/>
+      </linearGradient>
+    </defs>
+    <rect width="150" height="150" rx="14" ry="14"
+          fill="url(#g_prs_bg)" stroke="#94a3b8" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="75" y="46" text-anchor="middle" dominant-baseline="middle"
+          font-size="26" fill="#94a3b8" opacity="0.9" font-family="serif">⇄</text>
+    <rect x="55" y="62" width="40" height="28" rx="8"
+          fill="url(#g_prs_badge)" opacity="0.95"/>
+    <text x="75" y="76" text-anchor="middle" dominant-baseline="middle"
+          font-size="15" font-weight="700" fill="#ffffff"
+          font-family="'JetBrains Mono','Courier New',monospace">D</text>
+    <text x="75" y="104" text-anchor="middle" dominant-baseline="middle"
+          font-size="10.5" fill="#94a3b8"
+          font-family="'Segoe UI',system-ui,sans-serif"
+          font-weight="600" letter-spacing="0.5">Pull Requests</text>
+    <text x="75" y="124" text-anchor="middle" dominant-baseline="middle"
+          font-size="11" fill="#94a3b8"
+          font-family="'JetBrains Mono','Courier New',monospace">1</text>
+  </g>
+  <g transform="translate(516,80)">
+    <defs>
+      <linearGradient id="g_issues_bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#475569" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#334155" stop-opacity="0.08"/>
+      </linearGradient>
+      <linearGradient id="g_issues_badge" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#475569"/>
+        <stop offset="100%" stop-color="#94a3b8"/>
+      </linearGradient>
+    </defs>
+    <rect width="150" height="150" rx="14" ry="14"
+          fill="url(#g_issues_bg)" stroke="#475569" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="75" y="46" text-anchor="middle" dominant-baseline="middle"
+          font-size="26" fill="#475569" opacity="0.9" font-family="serif">⚑</text>
+    <rect x="55" y="62" width="40" height="28" rx="8"
+          fill="url(#g_issues_badge)" opacity="0.95"/>
+    <text x="75" y="76" text-anchor="middle" dominant-baseline="middle"
+          font-size="15" font-weight="700" fill="#ffffff"
+          font-family="'JetBrains Mono','Courier New',monospace">?</text>
+    <text x="75" y="104" text-anchor="middle" dominant-baseline="middle"
+          font-size="10.5" fill="#475569"
+          font-family="'Segoe UI',system-ui,sans-serif"
+          font-weight="600" letter-spacing="0.5">Issues</text>
+    <text x="75" y="124" text-anchor="middle" dominant-baseline="middle"
+          font-size="11" fill="#94a3b8"
+          font-family="'JetBrains Mono','Courier New',monospace">0</text>
+  </g>
+  <g transform="translate(680,80)">
+    <defs>
+      <linearGradient id="g_repos_bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#60a5fa" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.08"/>
+      </linearGradient>
+      <linearGradient id="g_repos_badge" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#2563eb"/>
+        <stop offset="100%" stop-color="#60a5fa"/>
+      </linearGradient>
+    </defs>
+    <rect width="150" height="150" rx="14" ry="14"
+          fill="url(#g_repos_bg)" stroke="#60a5fa" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="75" y="46" text-anchor="middle" dominant-baseline="middle"
+          font-size="26" fill="#60a5fa" opacity="0.9" font-family="serif">▤</text>
+    <rect x="55" y="62" width="40" height="28" rx="8"
+          fill="url(#g_repos_badge)" opacity="0.95"/>
+    <text x="75" y="76" text-anchor="middle" dominant-baseline="middle"
+          font-size="15" font-weight="700" fill="#ffffff"
+          font-family="'JetBrains Mono','Courier New',monospace">B</text>
+    <text x="75" y="104" text-anchor="middle" dominant-baseline="middle"
+          font-size="10.5" fill="#60a5fa"
+          font-family="'Segoe UI',system-ui,sans-serif"
+          font-weight="600" letter-spacing="0.5">Repositories</text>
+    <text x="75" y="124" text-anchor="middle" dominant-baseline="middle"
+          font-size="11" fill="#94a3b8"
+          font-family="'JetBrains Mono','Courier New',monospace">31</text>
+  </g>
+  <g transform="translate(844,80)">
+    <defs>
+      <linearGradient id="g_followers_bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#22c55e" stop-opacity="0.08"/>
+      </linearGradient>
+      <linearGradient id="g_followers_badge" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#16a34a"/>
+        <stop offset="100%" stop-color="#4ade80"/>
+      </linearGradient>
+    </defs>
+    <rect width="150" height="150" rx="14" ry="14"
+          fill="url(#g_followers_bg)" stroke="#4ade80" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="75" y="46" text-anchor="middle" dominant-baseline="middle"
+          font-size="26" fill="#4ade80" opacity="0.9" font-family="serif">♥</text>
+    <rect x="55" y="62" width="40" height="28" rx="8"
+          fill="url(#g_followers_badge)" opacity="0.95"/>
+    <text x="75" y="76" text-anchor="middle" dominant-baseline="middle"
+          font-size="15" font-weight="700" fill="#ffffff"
+          font-family="'JetBrains Mono','Courier New',monospace">C</text>
+    <text x="75" y="104" text-anchor="middle" dominant-baseline="middle"
+          font-size="10.5" fill="#4ade80"
+          font-family="'Segoe UI',system-ui,sans-serif"
+          font-weight="600" letter-spacing="0.5">Followers</text>
+    <text x="75" y="124" text-anchor="middle" dominant-baseline="middle"
+          font-size="11" fill="#94a3b8"
+          font-family="'JetBrains Mono','Courier New',monospace">22</text>
+  </g>
+</svg>
