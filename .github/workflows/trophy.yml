@@ -2,8 +2,8 @@ name: Update GitHub Trophies
 
 on:
   schedule:
-    - cron: "0 3 * * 0"   # Her Pazar sabahı 03:00 UTC
-  workflow_dispatch:        # Elle de tetiklenebilir
+    - cron: "0 3 * * 0"   # Her Pazar 03:00 UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -31,17 +31,11 @@ jobs:
       - name: Validate SVG
         run: |
           FILE="profile/trophy.svg"
-          if [ ! -f "$FILE" ]; then
-            echo "ERROR: $FILE not found!" && exit 1
-          fi
-          if ! grep -q "<svg" "$FILE"; then
-            echo "ERROR: $FILE is not a valid SVG!" && cat "$FILE" && exit 1
-          fi
+          [ -f "$FILE" ] || { echo "ERROR: $FILE not found!"; exit 1; }
+          grep -q "<svg" "$FILE" || { echo "ERROR: Not a valid SVG!"; cat "$FILE"; exit 1; }
           SIZE=$(wc -c < "$FILE")
           echo "SVG OK — $SIZE bytes"
-          if [ "$SIZE" -lt 500 ]; then
-            echo "ERROR: SVG is suspiciously small ($SIZE bytes)" && exit 1
-          fi
+          [ "$SIZE" -gt 500 ] || { echo "ERROR: SVG too small ($SIZE bytes)"; exit 1; }
 
       - name: Commit & Push
         run: |
