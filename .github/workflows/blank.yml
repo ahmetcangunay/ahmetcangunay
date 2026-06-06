@@ -2,7 +2,6 @@ name: Update GitHub Trophies
 
 on:
   schedule:
-    # Her Pazar günü saat 03:00 UTC'de otomatik çalışır
     - cron: "0 3 * * 0"
   workflow_dispatch:
 
@@ -15,24 +14,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # profile dizinini baştan oluşturalım ki hata riski kalmasın
-      - name: Prepare directory
-        run: mkdir -p profile
-
       - name: Generate Trophy SVG
         uses: ryo-ma/github-profile-trophy@master
         with:
           username: ${{ github.repository_owner }}
           theme: radical
-          # Çıktının nereye kaydedileceğini doğrudan eyleme bildiriyoruz
-          file: profile/trophy.svg
 
       - name: Commit and Push Trophies
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # Sadece dosya gerçekten değiştiyse commit et, yoksa hata vermeden geç
+          # Klasörü oluşturup üretilen dosyayı güvenli bir şekilde taşıyoruz
+          mkdir -p profile
+          if [ -f "trophy.svg" ]; then
+            mv trophy.svg profile/trophy.svg
+          fi
+          
           git add profile/trophy.svg
           git commit -m "Update GitHub Trophies" || exit 0
           git push
