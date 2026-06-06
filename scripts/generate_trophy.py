@@ -9,6 +9,7 @@ from pathlib import Path
 
 ERROR_PREVIEW_MAX_CHARS = 200
 TROPHY_RANK_EXCLUSIONS = "-C,-B,-?"
+REQUEST_TIMEOUT_SECONDS = 30
 
 
 def build_url(username: str) -> str:
@@ -35,7 +36,7 @@ def main() -> None:
     )
 
     try:
-        with urllib.request.urlopen(request, timeout=30) as response:
+        with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
             body = response.read()
             content_type = response.headers.get("Content-Type", "unknown")
     except URLError as exc:
