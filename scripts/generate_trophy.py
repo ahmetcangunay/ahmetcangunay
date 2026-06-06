@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
 import os
+import xml.etree.ElementTree as ET
 import urllib.parse
 import urllib.request
 from urllib.error import URLError
 from pathlib import Path
 
-PREVIEW_LENGTH = 200
+ERROR_PREVIEW_MAX_CHARS = 200
 
 
 def build_url(username: str) -> str:
@@ -40,8 +41,13 @@ def main() -> None:
         raise SystemExit(f"Failed to fetch trophy SVG: {exc}") from exc
 
     text = body.decode("utf-8", errors="replace")
-    if "<svg" not in text:
-        preview = text[:PREVIEW_LENGTH].replace("\n", " ")
+    try:
+        root = ET.fromstring(text)
+    except ET.ParseError:
+        root = None
+
+    if root is None or not root.tag.lower().endswith("svg"):
+        preview = text[:ERROR_PREVIEW_MAX_CHARS].replace("\n", " ")
         raise SystemExit(
             f"Fetched content is not valid SVG "
             f"(content-type: {content_type}, preview: {preview!r})"
