@@ -8,6 +8,7 @@ from urllib.error import URLError
 from pathlib import Path
 
 ERROR_PREVIEW_MAX_CHARS = 200
+TROPHY_RANK_EXCLUSIONS = "-C,-B,-?"
 
 
 def build_url(username: str) -> str:
@@ -15,7 +16,7 @@ def build_url(username: str) -> str:
         {
             "username": username,
             "theme": "radical",
-            "rank": "-C,-B,-?",
+            "rank": TROPHY_RANK_EXCLUSIONS,
         }
     )
     return f"https://github-profile-trophy.vercel.app/?{params}"
@@ -46,7 +47,9 @@ def main() -> None:
     except ET.ParseError:
         root = None
 
-    if root is None or not root.tag.lower().endswith("svg"):
+    normalized_tag = (root.tag if root is not None else "").lower()
+    is_svg = normalized_tag == "svg" or normalized_tag.endswith("}svg")
+    if not is_svg:
         preview = text[:ERROR_PREVIEW_MAX_CHARS].replace("\n", " ")
         raise SystemExit(
             f"Fetched content is not valid SVG "
