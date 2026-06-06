@@ -3,6 +3,7 @@
 import os
 import urllib.parse
 import urllib.request
+from urllib.error import URLError
 from pathlib import Path
 
 
@@ -29,12 +30,20 @@ def main() -> None:
         headers={"User-Agent": "github-actions-generate-trophy"},
     )
 
-    with urllib.request.urlopen(request, timeout=30) as response:
-        body = response.read()
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            body = response.read()
+            content_type = response.headers.get("Content-Type", "unknown")
+    except URLError as exc:
+        raise SystemExit(f"Failed to fetch trophy SVG: {exc}") from exc
 
     text = body.decode("utf-8", errors="replace")
     if "<svg" not in text:
-        raise SystemExit("Fetched content is not valid SVG")
+        preview = text[:200].replace("\n", " ")
+        raise SystemExit(
+            f"Fetched content is not valid SVG "
+            f"(content-type: {content_type}, preview: {preview!r})"
+        )
 
     target = Path(output_path)
     target.parent.mkdir(parents=True, exist_ok=True)
