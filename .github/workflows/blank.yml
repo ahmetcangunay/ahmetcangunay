@@ -1,5 +1,4 @@
 name: Update GitHub Trophies
-
 on:
   schedule:
     - cron: "0 3 * * 0"
@@ -14,23 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate Trophy SVG
-        uses: ryo-ma/github-profile-trophy@master
-        with:
-          username: ${{ github.repository_owner }}
-          theme: radical
+      - name: Download Trophy SVG
+        run: |
+          mkdir -p profile
+          curl -o profile/trophy.svg \
+            "https://github-profile-trophy.vercel.app/?username=${{ github.repository_owner }}&theme=radical"
 
       - name: Commit and Push Trophies
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Klasörü oluşturup üretilen dosyayı güvenli bir şekilde taşıyoruz
-          mkdir -p profile
-          if [ -f "trophy.svg" ]; then
-            mv trophy.svg profile/trophy.svg
-          fi
-          
           git add profile/trophy.svg
           git commit -m "Update GitHub Trophies" || exit 0
           git push
