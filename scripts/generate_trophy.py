@@ -35,7 +35,9 @@ def main() -> None:
 
     repo_root = Path.cwd().resolve()
     target = (repo_root / relative_output).resolve()
-    if repo_root not in target.parents and target != repo_root:
+    try:
+        target.relative_to(repo_root)
+    except ValueError:
         raise SystemExit("TROPHY_OUTPUT must stay within the repository directory")
 
     request = urllib.request.Request(
@@ -45,19 +47,24 @@ def main() -> None:
 
     try:
         with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+            if response.status != 200:
+                raise SystemExit(f"Failed to fetch trophy SVG: HTTP {response.status}")
             body = response.read()
             content_type = response.headers.get("Content-Type", "unknown")
     except URLError as exc:
         raise SystemExit(f"Failed to fetch trophy SVG: {exc}") from exc
 
-    text = body.decode("utf-8", errors="replace")
+    try:
+        text = body.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise SystemExit(f"Fetched content is not valid UTF-8: {exc}") from exc
     try:
         root = ET.fromstring(text)
     except ET.ParseError:
         root = None
 
-    normalized_tag = (root.tag if root is not None else "").lower()
-    is_svg = normalized_tag == "svg" or normalized_tag.endswith("}svg")
+    svg_tags = {"svg", "{http://www.w3.org/2000/svg}svg"}
+    is_svg = root is not None and root.tag in svg_tags
     if not is_svg:
         preview = text[:ERROR_PREVIEW_MAX_CHARS].replace("\n", " ")
         raise SystemExit(
