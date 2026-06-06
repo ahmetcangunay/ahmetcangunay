@@ -5,10 +5,16 @@ on:
     # Runs at 0am UTC every day
     - cron: "0 0 * * *"
   workflow_dispatch:
+
 jobs:
   update-ps-trophies:
     name: Update Readme with PlayStation Trophies
     runs-on: ubuntu-22.04
+    
+    # Botun README dosyanı güncelleyebilmesi için gereken izin
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
@@ -20,3 +26,5 @@ jobs:
 
       - name: Check in updated README
         uses: EndBug/add-and-commit@v9
+        with:
+          message: "Update PSN Trophies"
