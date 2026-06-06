@@ -29,6 +29,14 @@ def main() -> None:
 
     if not username:
         raise SystemExit("GITHUB_USERNAME environment variable is required but not set")
+    relative_output = Path(output_path)
+    if relative_output.is_absolute():
+        raise SystemExit("TROPHY_OUTPUT must be a relative path")
+
+    repo_root = Path.cwd().resolve()
+    target = (repo_root / relative_output).resolve()
+    if repo_root not in target.parents and target != repo_root:
+        raise SystemExit("TROPHY_OUTPUT must stay within the repository directory")
 
     request = urllib.request.Request(
         build_url(username),
@@ -57,7 +65,6 @@ def main() -> None:
             f"(content-type: {content_type}, preview: {preview!r})"
         )
 
-    target = Path(output_path)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_bytes(body)
 
