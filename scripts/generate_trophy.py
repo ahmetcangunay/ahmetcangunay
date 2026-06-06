@@ -121,6 +121,8 @@ TROPHY_DEFS = [
 ]
 
 
+SHOW_RANKS = {"S", "A"}   # Sadece bu rank'lar gösterilir
+
 def resolve_tier(value, tiers):
     for threshold, rank, c1, c2 in tiers:
         if value >= threshold:
@@ -175,17 +177,41 @@ def render_card(td, value, cx, cy):
 
 
 def build_svg(stats):
-    rows    = (len(TROPHY_DEFS) + COLS - 1) // COLS
-    total_w = COLS * CARD_W + (COLS - 1) * GAP + PAD * 2
+    # Sadece S ve A rank'ına ulaşmış trophyleri filtrele
+    visible = [
+        td for td in TROPHY_DEFS
+        if resolve_tier(stats[td["key"]], td["tiers"])[0] in SHOW_RANKS
+    ]
+
+    cols    = min(COLS, len(visible)) if visible else COLS
+    rows    = max(1, (len(visible) + COLS - 1) // COLS) if visible else 1
+    total_w = cols * CARD_W + (cols - 1) * GAP + PAD * 2
     total_h = 56 + rows * CARD_H + (rows - 1) * GAP + PAD * 2
 
-    cards = ""
-    for i, td in enumerate(TROPHY_DEFS):
-        col = i % COLS
-        row = i // COLS
-        cx  = PAD + col * (CARD_W + GAP)
-        cy  = 56  + PAD + row * (CARD_H + GAP)
-        cards += render_card(td, stats[td["key"]], cx, cy)
+    if not visible:
+        # Henüz S/A yok — teşvik mesajı göster
+        empty_w = COLS * CARD_W + (COLS - 1) * GAP + PAD * 2
+        total_w = empty_w
+        total_h = 56 + 80 + PAD * 2
+        cards   = f"""
+  <text x="{total_w//2}" y="{56 + PAD + 28}" text-anchor="middle" dominant-baseline="middle"
+        font-size="13" fill="#64748b"
+        font-family="'Segoe UI',system-ui,sans-serif">
+    Henüz S veya A seviyesinde trophy kazanılmadı.
+  </text>
+  <text x="{total_w//2}" y="{56 + PAD + 52}" text-anchor="middle" dominant-baseline="middle"
+        font-size="11" fill="#475569"
+        font-family="'JetBrains Mono','Courier New',monospace">
+    Commit more, earn stars, get followers — trophies will appear here!
+  </text>"""
+    else:
+        cards = ""
+        for i, td in enumerate(visible):
+            col = i % COLS
+            row = i // COLS
+            cx  = PAD + col * (CARD_W + GAP)
+            cy  = 56  + PAD + row * (CARD_H + GAP)
+            cards += render_card(td, stats[td["key"]], cx, cy)
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
      width="{total_w}" height="{total_h}"
