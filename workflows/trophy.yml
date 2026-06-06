@@ -1,0 +1,2 @@
+- name: Profile Trophy Action
+  uses: soulteary/github-profile-trophy-action@v1.0.0
