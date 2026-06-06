@@ -6,6 +6,8 @@ import urllib.request
 from urllib.error import URLError
 from pathlib import Path
 
+PREVIEW_LENGTH = 200
+
 
 def build_url(username: str) -> str:
     params = urllib.parse.urlencode(
@@ -23,7 +25,7 @@ def main() -> None:
     output_path = os.environ.get("TROPHY_OUTPUT", "profile/trophy.svg").strip()
 
     if not username:
-        raise SystemExit("GITHUB_USERNAME is required")
+        raise SystemExit("GITHUB_USERNAME environment variable is required but not set")
 
     request = urllib.request.Request(
         build_url(username),
@@ -39,7 +41,7 @@ def main() -> None:
 
     text = body.decode("utf-8", errors="replace")
     if "<svg" not in text:
-        preview = text[:200].replace("\n", " ")
+        preview = text[:PREVIEW_LENGTH].replace("\n", " ")
         raise SystemExit(
             f"Fetched content is not valid SVG "
             f"(content-type: {content_type}, preview: {preview!r})"
