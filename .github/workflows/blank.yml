@@ -1,6 +1,35 @@
-- name: Generate trophy
-  uses: Erik-Donath/github-profile-trophy@feature/generate-svg
-  with:
-    username: your-username
-    output_path: trophy.svg
-    token: ${{ secrets.GITHUB_TOKEN }}
+name: Update GitHub Trophies
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate Trophy SVG
+        uses: ryo-ma/github-profile-trophy@master
+        with:
+          username: ${{ github.repository_owner }}
+          theme: radical
+          # İsterseniz istemediğiniz kupaları filtreleyebilirsiniz (Örn: no-frame=true)
+
+      - name: Commit and Push Trophies
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Üretilen trophy.svg dosyasını profile klasörüne taşıyalım (düzenli dursun diye)
+          mkdir -p profile
+          mv trophy.svg profile/trophy.svg || true
+          
+          git add profile/trophy.svg
+          git commit -m "Update GitHub Trophies" || exit 0
+          git push
