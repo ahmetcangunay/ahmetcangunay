@@ -25,7 +25,7 @@ jobs:
       - name: Generate Languages Card
         uses: readme-tools/github-readme-stats-action@v1
         with:
-          card: languages
+          card: top-langs
           options: username=${{ github.repository_owner }}&theme=tokyonight&layout=compact&card_width=495&title_color=38bdf8&icon_color=a855f7&text_color=cbd5e1&bg_color=0f172a
           path: profile/languages.svg
           token: ${{ secrets.GITHUB_TOKEN }}
